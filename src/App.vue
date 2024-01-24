@@ -12,7 +12,7 @@
     <div id="matrix-container">
       <table id="colorMatrix">
         <tr v-for="(row, i) in matrix.value" :key="i">
-          <td v-for="(cell, j) in row" :key="j"
+          <td class="rounded" v-for="(cell, j) in row" :key="j"
               :style="getStyle(i,j)"
               @click="highLightChunk(i,j)"
           ></td>
