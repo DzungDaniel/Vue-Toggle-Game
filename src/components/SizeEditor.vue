@@ -1,10 +1,10 @@
 <template>
-  <div id="matrix-size-edior" style="display: inline;">
-    <strong class="dimension" for="rows">Rows</strong>
-    <input class="form-inline rounded-pill border-success" 
+  <div id="matrix-size-edior" style="display: inline-block;">
+    <strong class="dimension" for="rows" style="display: inline-block;">Rows</strong>
+    <input class="form-inline rounded-pill border-success" style="display: inline-block;" 
           type="number" id="rows" min="1" v-model="numRows">
-    <strong class="dimension" for="cols">Columns</strong>
-    <input class="form-inline rounded-pill border-success"
+    <strong class="dimension" for="cols" style="display: inline-block;">Columns</strong>
+    <input class="form-inline rounded-pill border-success" style="display: inline-block;"
           type="number" id="cols" min="1" v-model="numCols">
     <button 
       class="dimension btn btn-success rounded-pill px-4 py-2" 
