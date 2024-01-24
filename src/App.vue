@@ -3,12 +3,14 @@
     <img alt="Vue logo" 
       src="./assets/logo.png" 
       height="100px" width="100px">
+    <br>
     <SizeEditor
       id="size-editor"
       :num-cols="numCols" 
       :num-rows="numRows" 
       @reset-matrix="(data) => handleReset(data.col, data.row)"> 
     </SizeEditor>
+    <br>
     <div id="matrix-container">
       <table id="colorMatrix">
         <tr v-for="(row, i) in matrix.value" :key="i">

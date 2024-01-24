@@ -1,12 +1,16 @@
 <template>
-  <div id="matrix-size-edior">
-    <label class="dimension" for="rows">Rows:</label>
+  <div id="matrix-size-edior" style="display: inline;">
+    <strong class="dimension" for="rows">Rows</strong>
     <input class="form-inline rounded-pill border-success" 
-           type="number" id="rows" min="1" v-model="numRows">
-    <label class="dimension" for="cols">Columns:</label>
+          type="number" id="rows" min="1" v-model="numRows">
+    <strong class="dimension" for="cols">Columns</strong>
     <input class="form-inline rounded-pill border-success"
-           type="number" id="cols" min="1" v-model="numCols">
-    <button class="dimension btn btn-success rounded-pill px-4 py-2" @click="resetMatrix">Reset Matrix</button>
+          type="number" id="cols" min="1" v-model="numCols">
+    <button 
+      class="dimension btn btn-success rounded-pill px-4 py-2" 
+      @click="resetMatrix">
+      Reset Matrix
+    </button>
   </div>
 </template>
 
@@ -26,5 +30,6 @@ const resetMatrix = () =>
 <style>
   .dimension{
     margin-left: 20px;
+    margin-right: 5px;
   }
 </style>
