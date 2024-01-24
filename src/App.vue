@@ -1,11 +1,11 @@
 <template>
-  <div id="app-content" display="flex" justify-content="center" align-items="center">
+  <div id="app-content">
     <img alt="Vue logo" src="./assets/logo.png">
     <SizeEditor :num-cols="numCols" :num-rows="numRows" 
                 @reset-matrix="(data) => handleReset(data.col, data.row)"> 
     </SizeEditor>
     <div display="flex" justify-content="center" align-items="center">
-      <table id="colorMatrix" display="flex" justify-content="center" align-items="center">
+      <table id="colorMatrix">
         <tr v-for="(row, i) in matrix.value" :key="i">
           <td v-for="(cell, j) in row" :key="j"
               :style="getStyle(i,j)"
@@ -98,8 +98,6 @@ function highLightChunk(i, j)
 
 function handleReset(col, row)
 {
-  console.log(col);
-  console.log(row);
   numCols.value = col;
   numRows.value = row;
   resetMatrix();
@@ -123,16 +121,11 @@ function resetMatrix()
 }
 
 onMounted(() => resetMatrix());
-
 </script>
 
 <style>
 #app-content {
   font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
 }
 </style>
