@@ -1,4 +1,4 @@
-# hello_vue
+# Vue Toggle Game
 
 ## Project setup
 ```
