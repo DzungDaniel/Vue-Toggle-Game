@@ -1,6 +1,8 @@
 <template>
   <div id="app-content">
-    <img alt="Vue logo" src="./assets/logo.png">
+    <img alt="Vue logo" 
+      src="./assets/logo.png" 
+      height="100px" width="100px">
     <SizeEditor
       id="size-editor"
       :num-cols="numCols" 
@@ -13,7 +15,6 @@
           <td v-for="(cell, j) in row" :key="j"
               :style="getStyle(i,j)"
               @click="highLightChunk(i,j)"
-              width = '30px' height = '30px'
           ></td>
         </tr>
       </table>
@@ -52,7 +53,9 @@
     const cellData = matrix.value[i][j];
     let borderStyle = visited.has(cellData) ? '3px solid black' : '3px solid transparent';
     return {'background-color': cellData.color,
-            'border': borderStyle};
+            'border': borderStyle,
+            'width': '30px',
+            'height': '30px'};
   }
 
   function getAdjs(cellData)
@@ -142,5 +145,10 @@
 
   #size-editor{
     margin: 30px;
+  }
+
+  #colorMatrix{
+    border-spacing: 5px;
+    border-collapse: separate;
   }
 </style>
