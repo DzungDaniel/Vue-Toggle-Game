@@ -1,10 +1,13 @@
 <template>
   <div id="app-content">
     <img alt="Vue logo" src="./assets/logo.png">
-    <SizeEditor :num-cols="numCols" :num-rows="numRows" 
-                @reset-matrix="(data) => handleReset(data.col, data.row)"> 
+    <SizeEditor
+      id="size-editor"
+      :num-cols="numCols" 
+      :num-rows="numRows" 
+      @reset-matrix="(data) => handleReset(data.col, data.row)"> 
     </SizeEditor>
-    <div display="flex" justify-content="center" align-items="center">
+    <div id="matrix-container">
       <table id="colorMatrix">
         <tr v-for="(row, i) in matrix.value" :key="i">
           <td v-for="(cell, j) in row" :key="j"
@@ -126,5 +129,18 @@
   #app-content {
     font-family: Avenir, Helvetica, Arial, sans-serif;
     text-align: center;
+    align-items: center;
+  }
+
+  #matrix-container{
+    margin: 30px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #size-editor{
+    margin: 30px;
   }
 </style>

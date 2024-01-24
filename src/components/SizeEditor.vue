@@ -1,10 +1,10 @@
 <template>
   <div id="matrix-size-edior">
-    <label for="rows">Rows:</label>
+    <label class="dimension" for="rows">Rows:</label>
     <input type="number" id="rows" min="1" v-model="numRows">
-    <label for="cols">Columns:</label>
+    <label class="dimension" for="cols">Columns:</label>
     <input type="number" id="cols" min="1" v-model="numCols">
-    <button @click="resetMatrix">Reset Matrix</button>
+    <button class="dimension" @click="resetMatrix">Reset Matrix</button>
   </div>
 </template>
 
@@ -21,6 +21,8 @@ const resetMatrix = () =>
 
 </script>
 
-<style scoped>
-
+<style>
+  .dimension{
+    margin-left: 20px;
+  }
 </style>
